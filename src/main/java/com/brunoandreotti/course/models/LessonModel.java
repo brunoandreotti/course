@@ -4,6 +4,7 @@ import com.brunoandreotti.course.enums.CourseLevel;
 import com.brunoandreotti.course.enums.CourseStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -36,6 +37,11 @@ public class LessonModel implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyy HH:mm:ss")
     @Column(nullable = false)
     private LocalDateTime createdAt;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "moduleId")
+    private ModuleModel module;
 
 
 
