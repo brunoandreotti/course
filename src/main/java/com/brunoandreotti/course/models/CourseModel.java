@@ -1,5 +1,6 @@
 package com.brunoandreotti.course.models;
 
+import com.brunoandreotti.course.dtos.CourseRecordDTO;
 import com.brunoandreotti.course.enums.CourseLevel;
 import com.brunoandreotti.course.enums.CourseStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -12,6 +13,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.beans.BeanUtils;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -63,5 +65,12 @@ public class CourseModel implements Serializable {
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     @Fetch(FetchMode.SUBSELECT)
     private Set<ModuleModel> modules;
+
+
+    public CourseModel toModel(CourseRecordDTO courseRecordDTO) {
+        var courseModel = new CourseModel();
+        BeanUtils.copyProperties(courseRecordDTO, courseModel);
+        return courseModel;
+    }
 
 }

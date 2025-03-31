@@ -1,5 +1,6 @@
 package com.brunoandreotti.course.services.impl;
 
+import com.brunoandreotti.course.dtos.CourseRecordDTO;
 import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.LessonModel;
 import com.brunoandreotti.course.models.ModuleModel;
@@ -10,6 +11,8 @@ import com.brunoandreotti.course.services.CourseService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.Set;
 
@@ -44,6 +47,19 @@ public class CourseServiceImpl implements CourseService {
             moduleRepository.deleteAll(courseModel.getModules());
         }
         courseRepository.delete(courseModel);
+    }
+
+    @Override
+    public CourseModel save(CourseRecordDTO courseRecordDTO) {
+
+        if (courseRepository.existsByName(courseRecordDTO.name())) {
+            throw new RuntimeException("Course with this name already exists");
+        }
+
+        var courseModel = new CourseModel().toModel(courseRecordDTO);
+        courseModel.setCreatedAt(LocalDateTime.now(ZoneId.of("UTC")));
+        courseModel.setUpdatedAt(LocalDateTime.now(ZoneId.of("UTC")));
+        return courseRepository.save(courseModel);
     }
 
 
