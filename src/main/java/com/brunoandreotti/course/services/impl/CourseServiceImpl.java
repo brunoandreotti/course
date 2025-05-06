@@ -9,12 +9,15 @@ import com.brunoandreotti.course.repositories.LessonRepository;
 import com.brunoandreotti.course.repositories.ModuleRepository;
 import com.brunoandreotti.course.services.CourseService;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -58,6 +61,31 @@ public class CourseServiceImpl implements CourseService {
 
         var courseModel = new CourseModel().toModel(courseRecordDTO);
         courseModel.setCreatedAt(LocalDateTime.now(ZoneId.of("UTC")));
+        courseModel.setUpdatedAt(LocalDateTime.now(ZoneId.of("UTC")));
+        return courseRepository.save(courseModel);
+    }
+
+    @Override
+    public List<CourseModel> listAll() {
+        return courseRepository.findAll();
+    }
+
+    @Override
+    public CourseModel findById(UUID courseId) {
+        Optional<CourseModel> course = courseRepository.findById(courseId);
+
+        if (course.isEmpty()) {
+            throw new RuntimeException("Curso não encontrado");
+        }
+
+        return course.get();
+    }
+
+    @Override
+    public CourseModel update(UUID courseId, CourseRecordDTO courseRecordDTO) {
+        CourseModel courseModel = findById(courseId);
+
+        BeanUtils.copyProperties(courseRecordDTO, courseModel);
         courseModel.setUpdatedAt(LocalDateTime.now(ZoneId.of("UTC")));
         return courseRepository.save(courseModel);
     }

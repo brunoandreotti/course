@@ -1,14 +1,15 @@
 package com.brunoandreotti.course.controllers;
 
 import com.brunoandreotti.course.dtos.CourseRecordDTO;
+import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.services.CourseService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/courses")
@@ -24,4 +25,29 @@ public class CourseController {
     public ResponseEntity<Object> saveCourse(@RequestBody @Valid CourseRecordDTO courseRecordDTO) {
             return ResponseEntity.status(HttpStatus.CREATED).body(courseService.save(courseRecordDTO));
     }
+    
+    @GetMapping
+    public ResponseEntity<List<CourseModel>> getAllCourses() {
+        return ResponseEntity.ok().body(courseService.listAll());
+    }
+
+    @GetMapping("/{courseId}")
+    public ResponseEntity<CourseModel> findCourseById(@PathVariable(value = "courseId") UUID courseId) {
+            return ResponseEntity.ok().body(courseService.findById(courseId));
+    }
+
+    @DeleteMapping("/{courseId}")
+    public ResponseEntity<Object> deleteCourseById(@PathVariable(value = "courseId") UUID courseId) {
+        courseService.delete(courseService.findById(courseId));
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/{courseId}")
+    public ResponseEntity<Object> updateCourseById(@PathVariable(value = "courseId") UUID courseId,
+                                                   @RequestBody @Valid CourseRecordDTO courseRecordDTO) {
+
+        return ResponseEntity.ok().body(courseService.update(courseId, courseRecordDTO));
+    }
+
+
 }
