@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -59,7 +58,7 @@ public class CourseServiceImpl implements CourseService {
             throw new RuntimeException("Course with this name already exists");
         }
 
-        var courseModel = new CourseModel().toModel(courseRecordDTO);
+        var courseModel = new CourseModel().fromDTO(courseRecordDTO);
         courseModel.setCreatedAt(LocalDateTime.now(ZoneId.of("UTC")));
         courseModel.setUpdatedAt(LocalDateTime.now(ZoneId.of("UTC")));
         return courseRepository.save(courseModel);

@@ -1,9 +1,11 @@
 package com.brunoandreotti.course.models;
 
+import com.brunoandreotti.course.dtos.ModuleRecordDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -40,4 +42,10 @@ public class ModuleModel implements Serializable {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "module", fetch = FetchType.LAZY)
     private Set<LessonModel> lessons;
+
+    public ModuleModel fromDTO(ModuleRecordDTO courseRecordDTO) {
+        var moduleModel = new ModuleModel();
+        BeanUtils.copyProperties(courseRecordDTO, moduleModel);
+        return moduleModel;
+    }
 }

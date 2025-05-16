@@ -28,25 +28,25 @@ public class CourseController {
     
     @GetMapping
     public ResponseEntity<List<CourseModel>> getAllCourses() {
-        return ResponseEntity.ok().body(courseService.listAll());
+        return ResponseEntity.status(HttpStatus.OK).body(courseService.listAll());
     }
 
     @GetMapping("/{courseId}")
     public ResponseEntity<CourseModel> findCourseById(@PathVariable(value = "courseId") UUID courseId) {
-            return ResponseEntity.ok().body(courseService.findById(courseId));
+            return ResponseEntity.status(HttpStatus.OK).body(courseService.findById(courseId));
     }
 
     @DeleteMapping("/{courseId}")
     public ResponseEntity<Object> deleteCourseById(@PathVariable(value = "courseId") UUID courseId) {
         courseService.delete(courseService.findById(courseId));
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping("/{courseId}")
     public ResponseEntity<Object> updateCourseById(@PathVariable(value = "courseId") UUID courseId,
                                                    @RequestBody @Valid CourseRecordDTO courseRecordDTO) {
 
-        return ResponseEntity.ok().body(courseService.update(courseId, courseRecordDTO));
+        return ResponseEntity.status(HttpStatus.OK).body(courseService.update(courseId, courseRecordDTO));
     }
 
 

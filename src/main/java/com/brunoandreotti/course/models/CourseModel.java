@@ -11,8 +11,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.beans.BeanUtils;
 
 import java.io.Serial;
@@ -67,7 +65,7 @@ public class CourseModel implements Serializable {
     private Set<ModuleModel> modules;
 
 
-    public CourseModel toModel(CourseRecordDTO courseRecordDTO) {
+    public CourseModel fromDTO(CourseRecordDTO courseRecordDTO) {
         var courseModel = new CourseModel();
         BeanUtils.copyProperties(courseRecordDTO, courseModel);
         return courseModel;
