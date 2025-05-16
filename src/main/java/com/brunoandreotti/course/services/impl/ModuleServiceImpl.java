@@ -1,45 +1,53 @@
 package com.brunoandreotti.course.services.impl;
 
+import com.brunoandreotti.course.dtos.CourseRecordDTO;
 import com.brunoandreotti.course.dtos.ModuleRecordDTO;
 import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.LessonModel;
 import com.brunoandreotti.course.models.ModuleModel;
+import com.brunoandreotti.course.repositories.CourseRepository;
 import com.brunoandreotti.course.repositories.LessonRepository;
 import com.brunoandreotti.course.repositories.ModuleRepository;
 import com.brunoandreotti.course.services.CourseService;
 import com.brunoandreotti.course.services.ModuleService;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
 public class ModuleServiceImpl implements ModuleService {
 
-    final ModuleRepository moduleRepository;
-    final LessonRepository lessonRepository;
-    final CourseService courseService;
+    private final ModuleRepository moduleRepository;
+    private final LessonRepository lessonRepository;
+    private final CourseService courseService;
 
-    public ModuleServiceImpl(ModuleRepository moduleRepository, LessonRepository lessonRepository, CourseService courseService) {
+
+    public ModuleServiceImpl(ModuleRepository moduleRepository, LessonRepository lessonRepository, CourseService courseService, CourseRepository courseRepository) {
         this.moduleRepository = moduleRepository;
         this.lessonRepository = lessonRepository;
         this.courseService = courseService;
+
     }
 
     @Transactional
     @Override
-    public void delete(ModuleModel moduleModel) {
+    public void delete(UUID courseId, UUID moduleId) {
 
-        List<LessonModel> lessonList = lessonRepository.findAllLEssonsIntoModule(moduleModel.getModuleId());
+        ModuleModel module = findModuleIntoCourse(courseId, moduleId);
+
+        List<LessonModel> lessonList = lessonRepository.findAllLEssonsIntoModule(moduleId);
 
         if (!lessonList.isEmpty()) {
             lessonRepository.deleteAll(lessonList);
         }
 
-        moduleRepository.delete(moduleModel);
+        moduleRepository.delete(module);
     }
 
     @Override
@@ -53,6 +61,30 @@ public class ModuleServiceImpl implements ModuleService {
 
         return moduleRepository.save(moduleModel);
 
+    }
+
+    @Override
+    public List<ModuleModel> listAllByCourseId(UUID courseId) {
+        return moduleRepository.findAllModulesIntoCourse(courseId);
+    }
+
+    @Override
+    public ModuleModel findModuleIntoCourse(UUID courseId, UUID moduleId) {
+        Optional<ModuleModel> module = moduleRepository.findModuleIntoCourse(courseId, moduleId);
+
+        if (module.isEmpty()) {
+            throw new RuntimeException("module not found");
+        }
+
+        return module.get();
+    }
+
+    @Override
+    public ModuleModel update(UUID courseId, UUID moduleId, ModuleRecordDTO moduleRecordDTO) {
+        ModuleModel moduleModel = findModuleIntoCourse(courseId, moduleId);
+
+        BeanUtils.copyProperties(moduleRecordDTO, moduleModel);
+        return moduleRepository.save(moduleModel);
     }
 
 

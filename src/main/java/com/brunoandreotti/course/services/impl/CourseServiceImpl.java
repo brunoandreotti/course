@@ -74,7 +74,7 @@ public class CourseServiceImpl implements CourseService {
         Optional<CourseModel> course = courseRepository.findById(courseId);
 
         if (course.isEmpty()) {
-            throw new RuntimeException("Curso não encontrado");
+            throw new RuntimeException("Course not found");
         }
 
         return course.get();
