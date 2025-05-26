@@ -41,7 +41,7 @@ public class ModuleServiceImpl implements ModuleService {
 
         ModuleModel module = findModuleIntoCourse(courseId, moduleId);
 
-        List<LessonModel> lessonList = lessonRepository.findAllLEssonsIntoModule(moduleId);
+        List<LessonModel> lessonList = lessonRepository.findAllLessonsIntoModule(moduleId);
 
         if (!lessonList.isEmpty()) {
             lessonRepository.deleteAll(lessonList);
