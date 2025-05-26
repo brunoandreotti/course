@@ -1,7 +1,6 @@
 package com.brunoandreotti.course.services;
 
 import com.brunoandreotti.course.dtos.ModuleRecordDTO;
-import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.ModuleModel;
 import jakarta.validation.Valid;
 
@@ -19,4 +18,6 @@ public interface ModuleService {
     ModuleModel findModuleIntoCourse(UUID courseId, UUID moduleId);
 
     ModuleModel update(UUID courseId, UUID moduleId, @Valid ModuleRecordDTO moduleRecordDTO);
+
+    ModuleModel findById(UUID moduleId);
 }

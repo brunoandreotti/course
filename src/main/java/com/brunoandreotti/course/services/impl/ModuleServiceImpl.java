@@ -87,5 +87,16 @@ public class ModuleServiceImpl implements ModuleService {
         return moduleRepository.save(moduleModel);
     }
 
+    @Override
+    public ModuleModel findById(UUID moduleId) {
+        Optional<ModuleModel> module = moduleRepository.findById(moduleId);
+
+        if (module.isEmpty()) {
+            throw new RuntimeException("module not found");
+        }
+
+        return module.get();
+    }
+
 
 }
