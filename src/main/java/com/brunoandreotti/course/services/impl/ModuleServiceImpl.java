@@ -11,8 +11,12 @@ import com.brunoandreotti.course.repositories.LessonRepository;
 import com.brunoandreotti.course.repositories.ModuleRepository;
 import com.brunoandreotti.course.services.CourseService;
 import com.brunoandreotti.course.services.ModuleService;
+import com.brunoandreotti.course.specifications.SpecificationTemplate;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -65,8 +69,14 @@ public class ModuleServiceImpl implements ModuleService {
     }
 
     @Override
-    public List<ModuleModel> listAllByCourseId(UUID courseId) {
+    public List<ModuleModel> findAllModulesIntoCourse(UUID courseId) {
         return moduleRepository.findAllModulesIntoCourse(courseId);
+    }
+
+    @Override
+    public Page<ModuleModel> findAllModulesIntoCourse(Specification<ModuleModel> spec, Pageable pageable, UUID courseID) {
+        Specification<ModuleModel> specWithCourseId = SpecificationTemplate.moduleCourseId(courseID).and(spec);
+        return moduleRepository.findAll(specWithCourseId, pageable);
     }
 
     @Override

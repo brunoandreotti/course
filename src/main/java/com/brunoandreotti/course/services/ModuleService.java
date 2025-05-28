@@ -3,6 +3,9 @@ package com.brunoandreotti.course.services;
 import com.brunoandreotti.course.dtos.ModuleRecordDTO;
 import com.brunoandreotti.course.models.ModuleModel;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,7 +16,9 @@ public interface ModuleService {
 
     ModuleModel save(ModuleRecordDTO moduleRecordDTO, UUID courseId);
 
-    List<ModuleModel> listAllByCourseId(UUID courseID);
+    List<ModuleModel> findAllModulesIntoCourse(UUID courseID);
+
+    Page<ModuleModel> findAllModulesIntoCourse(Specification<ModuleModel> spec, Pageable pageable, UUID courseID);
 
     ModuleModel findModuleIntoCourse(UUID courseId, UUID moduleId);
 

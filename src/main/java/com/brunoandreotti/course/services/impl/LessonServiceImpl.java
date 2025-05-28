@@ -8,7 +8,11 @@ import com.brunoandreotti.course.models.ModuleModel;
 import com.brunoandreotti.course.repositories.LessonRepository;
 import com.brunoandreotti.course.services.LessonService;
 import com.brunoandreotti.course.services.ModuleService;
+import com.brunoandreotti.course.specifications.SpecificationTemplate;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import javax.management.RuntimeMBeanException;
@@ -41,7 +45,7 @@ public class LessonServiceImpl implements LessonService {
     }
 
     @Override
-    public List<LessonModel> listAllByModuleId(UUID moduleId) {
+    public List<LessonModel> findAllLessonsIntoModule(UUID moduleId) {
         return lessonRepository.findAllLessonsIntoModule(moduleId);
     }
 
@@ -57,6 +61,13 @@ public class LessonServiceImpl implements LessonService {
     }
 
     @Override
+    public Page<LessonModel> findAllLessonsIntoModule(Specification<LessonModel> spec, Pageable pageable, UUID moduleId) {
+
+        Specification<LessonModel> specWithModuleId = SpecificationTemplate.lessonModuleId(moduleId).and(spec);
+        return lessonRepository.findAll(specWithModuleId, pageable);
+    }
+
+    @Override
     public void delete(UUID moduleId, UUID lessonId) {
        LessonModel lesson = findLessonIntoModule(moduleId, lessonId);
         lessonRepository.delete(lesson);
@@ -69,6 +80,8 @@ public class LessonServiceImpl implements LessonService {
         BeanUtils.copyProperties(lessonRecordDTO, lessonModel);
         return lessonRepository.save(lessonModel);
     }
+
+
 
 
 }

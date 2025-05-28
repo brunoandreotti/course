@@ -1,11 +1,12 @@
 package com.brunoandreotti.course.controllers;
 
 import com.brunoandreotti.course.dtos.LessonRecordDTO;
-import com.brunoandreotti.course.dtos.ModuleRecordDTO;
 import com.brunoandreotti.course.models.LessonModel;
-import com.brunoandreotti.course.models.ModuleModel;
 import com.brunoandreotti.course.services.LessonService;
+import com.brunoandreotti.course.specifications.SpecificationTemplate;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,8 +32,10 @@ public class LessonController {
 
 
     @GetMapping("/modules/{moduleId}/lessons")
-    public ResponseEntity<List<LessonModel>> getAllLessons(@PathVariable(value = "moduleId") UUID moduleId) {
-        return ResponseEntity.status(HttpStatus.OK).body(lessonService.listAllByModuleId(moduleId));
+    public ResponseEntity<Page<LessonModel>> getAllLessons(@PathVariable(value = "moduleId") UUID moduleId,
+                                                           SpecificationTemplate.LessonSpec spec,
+                                                           Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK).body(lessonService.findAllLessonsIntoModule(spec, pageable, moduleId));
     }
 
     @GetMapping("/modules/{moduleId}/lessons/{lessonId}")
