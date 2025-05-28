@@ -1,6 +1,7 @@
 package com.brunoandreotti.course.services.impl;
 
 import com.brunoandreotti.course.dtos.CourseRecordDTO;
+import com.brunoandreotti.course.exceptions.NotFoundException;
 import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.LessonModel;
 import com.brunoandreotti.course.models.ModuleModel;
@@ -56,7 +57,7 @@ public class CourseServiceImpl implements CourseService {
     public CourseModel save(CourseRecordDTO courseRecordDTO) {
 
         if (courseRepository.existsByName(courseRecordDTO.name())) {
-            throw new RuntimeException("Course with this name already exists");
+            throw new NotFoundException("Course with this name already exists");
         }
 
         var courseModel = new CourseModel().fromDTO(courseRecordDTO);
@@ -75,7 +76,7 @@ public class CourseServiceImpl implements CourseService {
         Optional<CourseModel> course = courseRepository.findById(courseId);
 
         if (course.isEmpty()) {
-            throw new RuntimeException("Course not found");
+            throw new NotFoundException("Course not found");
         }
 
         return course.get();

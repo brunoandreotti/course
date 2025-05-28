@@ -2,6 +2,7 @@ package com.brunoandreotti.course.services.impl;
 
 
 import com.brunoandreotti.course.dtos.LessonRecordDTO;
+import com.brunoandreotti.course.exceptions.NotFoundException;
 import com.brunoandreotti.course.models.LessonModel;
 import com.brunoandreotti.course.models.ModuleModel;
 import com.brunoandreotti.course.repositories.LessonRepository;
@@ -49,7 +50,7 @@ public class LessonServiceImpl implements LessonService {
         Optional<LessonModel> lesson = lessonRepository.findLessonIntoModule(moduleId, lessonId);
 
         if (lesson.isEmpty()) {
-            throw new RuntimeException("Lesson not found");
+            throw new NotFoundException("Lesson not found");
         }
 
         return lesson.get();

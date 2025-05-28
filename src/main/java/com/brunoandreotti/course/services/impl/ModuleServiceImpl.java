@@ -2,6 +2,7 @@ package com.brunoandreotti.course.services.impl;
 
 import com.brunoandreotti.course.dtos.CourseRecordDTO;
 import com.brunoandreotti.course.dtos.ModuleRecordDTO;
+import com.brunoandreotti.course.exceptions.NotFoundException;
 import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.LessonModel;
 import com.brunoandreotti.course.models.ModuleModel;
@@ -73,7 +74,7 @@ public class ModuleServiceImpl implements ModuleService {
         Optional<ModuleModel> module = moduleRepository.findModuleIntoCourse(courseId, moduleId);
 
         if (module.isEmpty()) {
-            throw new RuntimeException("module not found");
+            throw new NotFoundException("Module not found");
         }
 
         return module.get();
@@ -92,7 +93,7 @@ public class ModuleServiceImpl implements ModuleService {
         Optional<ModuleModel> module = moduleRepository.findById(moduleId);
 
         if (module.isEmpty()) {
-            throw new RuntimeException("module not found");
+            throw new NotFoundException("Module not found");
         }
 
         return module.get();
