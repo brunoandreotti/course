@@ -2,9 +2,10 @@ package com.brunoandreotti.course.services;
 
 import com.brunoandreotti.course.dtos.CourseRecordDTO;
 import com.brunoandreotti.course.models.CourseModel;
-import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 
-import java.util.List;
 import java.util.UUID;
 
 public interface CourseService {
@@ -13,7 +14,7 @@ public interface CourseService {
 
     CourseModel save(CourseRecordDTO courseRecordDTO);
 
-    List<CourseModel> listAll();
+    Page<CourseModel> listAll(Specification<CourseModel> spec, Pageable pageable);
 
     CourseModel findById(UUID courseId);
 
