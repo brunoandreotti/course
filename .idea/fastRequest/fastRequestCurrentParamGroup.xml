@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentParamGroup">
+    <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+    <option name="filePath" value="/.fastRequest/collections/Root/course/CourseController~getAllCourses.rapi" />
+    <option name="method" value="getAllCourses" />
+    <option name="methodDescription" value="getAllCourses" />
+    <option name="module" value="course" />
+    <option name="originUrl" value="courses" />
+    <option name="requestParamMap">
+      <map>
+        <entry key="pageable">
+          <value>
+            <Object />
+          </value>
+        </entry>
+        <entry key="spec">
+          <value>
+            <Object />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="responseParamMap">
+      <map>
+        <entry key="return">
+          <value>
+            <Object />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+    <option name="tempId" value="" />
+    <option name="url" value="/courses" />
+  </component>
+</project>

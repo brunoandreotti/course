@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestHistoryConfig">
+    <option name="historyList">
+      <list>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="getAllCourses" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="method" value="getAllCourses" />
+              <option name="methodDescription" value="getAllCourses" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;java&quot;}]" />
+              <option name="urlParamsKeyValueListText" value="name=java" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/courses?name=java&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;content&quot;:[{&quot;courseId&quot;:&quot;e76c44a2-f61d-4cc1-ae30-bb8747a248b6&quot;,&quot;name&quot;:&quot;Java Básic 2.0&quot;,&quot;description&quot;:&quot;Aprenda a programar em Java do basico ao Intermediário&quot;,&quot;createdAt&quot;:&quot;2025-03-31T19:54:49Z&quot;,&quot;updatedAt&quot;:&quot;2025-03-31T19:54:49Z&quot;,&quot;courseStatus&quot;:&quot;CONCLUDED&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;www.michellibrito.com/image/03&quot;},{&quot;courseId&quot;:&quot;a6a3d923-ebac-4a23-ab30-661fdbe75840&quot;,&quot;name&quot;:&quot;Java Intermediário&quot;,&quot;description&quot;:&quot;Aprenda a programar em Java do basico ao Intermediário&quot;,&quot;createdAt&quot;:&quot;2025-05-28T18:36:52Z&quot;,&quot;updatedAt&quot;:&quot;2025-05-28T18:36:52Z&quot;,&quot;courseStatus&quot;:&quot;CONCLUDED&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;www.michellibrito.com/image/03&quot;}],&quot;pageable&quot;:{&quot;pageNumber&quot;:0,&quot;pageSize&quot;:2,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;offset&quot;:0,&quot;paged&quot;:true,&quot;unpaged&quot;:false},&quot;last&quot;:true,&quot;totalElements&quot;:2,&quot;totalPages&quot;:1,&quot;size&quot;:2,&quot;number&quot;:0,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;first&quot;:true,&quot;numberOfElements&quot;:2,&quot;empty&quot;:false}" />
+          <option name="url" value="courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="getAllCourses" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="method" value="getAllCourses" />
+              <option name="methodDescription" value="getAllCourses" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;1&quot;}]" />
+              <option name="urlParamsKeyValueListText" value="name=1" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/courses?name=1&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;content&quot;:[{&quot;courseId&quot;:&quot;7e7e6166-ed25-4ee2-b2b5-b5ea616eb88b&quot;,&quot;name&quot;:&quot;name_mnm81&quot;,&quot;description&quot;:&quot;description_p793q&quot;,&quot;createdAt&quot;:&quot;2025-05-29T19:45:47Z&quot;,&quot;updatedAt&quot;:&quot;2025-05-29T19:45:47Z&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;imageUrl_6ubhy&quot;}],&quot;pageable&quot;:{&quot;pageNumber&quot;:0,&quot;pageSize&quot;:2,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;offset&quot;:0,&quot;paged&quot;:true,&quot;unpaged&quot;:false},&quot;last&quot;:true,&quot;totalElements&quot;:1,&quot;totalPages&quot;:1,&quot;size&quot;:2,&quot;number&quot;:0,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;first&quot;:true,&quot;numberOfElements&quot;:1,&quot;empty&quot;:false}" />
+          <option name="url" value="courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="getAllCourses" />
+          <option name="methodType" value="GET" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="method" value="getAllCourses" />
+              <option name="methodDescription" value="getAllCourses" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/courses&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;content&quot;:[{&quot;courseId&quot;:&quot;e76c44a2-f61d-4cc1-ae30-bb8747a248b6&quot;,&quot;name&quot;:&quot;Java Básic 2.0&quot;,&quot;description&quot;:&quot;Aprenda a programar em Java do basico ao Intermediário&quot;,&quot;createdAt&quot;:&quot;2025-03-31T19:54:49Z&quot;,&quot;updatedAt&quot;:&quot;2025-03-31T19:54:49Z&quot;,&quot;courseStatus&quot;:&quot;CONCLUDED&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;www.michellibrito.com/image/03&quot;},{&quot;courseId&quot;:&quot;a6a3d923-ebac-4a23-ab30-661fdbe75840&quot;,&quot;name&quot;:&quot;Java Intermediário&quot;,&quot;description&quot;:&quot;Aprenda a programar em Java do basico ao Intermediário&quot;,&quot;createdAt&quot;:&quot;2025-05-28T18:36:52Z&quot;,&quot;updatedAt&quot;:&quot;2025-05-28T18:36:52Z&quot;,&quot;courseStatus&quot;:&quot;CONCLUDED&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;www.michellibrito.com/image/03&quot;}],&quot;pageable&quot;:{&quot;pageNumber&quot;:0,&quot;pageSize&quot;:2,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;offset&quot;:0,&quot;paged&quot;:true,&quot;unpaged&quot;:false},&quot;last&quot;:false,&quot;totalElements&quot;:3,&quot;totalPages&quot;:2,&quot;size&quot;:2,&quot;number&quot;:0,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;first&quot;:true,&quot;numberOfElements&quot;:2,&quot;empty&quot;:false}" />
+          <option name="url" value="courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="saveCourse" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="course" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/courses&#13;&#10;Request Headers: &#13;&#10;    Origin: http://localhost:8080&#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;content&quot;:[{&quot;courseId&quot;:&quot;e76c44a2-f61d-4cc1-ae30-bb8747a248b6&quot;,&quot;name&quot;:&quot;Java Básic 2.0&quot;,&quot;description&quot;:&quot;Aprenda a programar em Java do basico ao Intermediário&quot;,&quot;createdAt&quot;:&quot;2025-03-31T19:54:49Z&quot;,&quot;updatedAt&quot;:&quot;2025-03-31T19:54:49Z&quot;,&quot;courseStatus&quot;:&quot;CONCLUDED&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;www.michellibrito.com/image/03&quot;},{&quot;courseId&quot;:&quot;a6a3d923-ebac-4a23-ab30-661fdbe75840&quot;,&quot;name&quot;:&quot;Java Intermediário&quot;,&quot;description&quot;:&quot;Aprenda a programar em Java do basico ao Intermediário&quot;,&quot;createdAt&quot;:&quot;2025-05-28T18:36:52Z&quot;,&quot;updatedAt&quot;:&quot;2025-05-28T18:36:52Z&quot;,&quot;courseStatus&quot;:&quot;CONCLUDED&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;www.michellibrito.com/image/03&quot;}],&quot;pageable&quot;:{&quot;pageNumber&quot;:0,&quot;pageSize&quot;:2,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;offset&quot;:0,&quot;paged&quot;:true,&quot;unpaged&quot;:false},&quot;last&quot;:false,&quot;totalElements&quot;:3,&quot;totalPages&quot;:2,&quot;size&quot;:2,&quot;number&quot;:0,&quot;sort&quot;:{&quot;empty&quot;:true,&quot;sorted&quot;:false,&quot;unsorted&quot;:true},&quot;first&quot;:true,&quot;numberOfElements&quot;:2,&quot;empty&quot;:false}" />
+          <option name="url" value="courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="404" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="saveCourse" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="course" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="course" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/course&#13;&#10;Request Headers: &#13;&#10;    Origin: http://localhost:8080&#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;timestamp&quot;:&quot;2025-05-29T19:54:59.006+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;/ead-course/course&quot;}" />
+          <option name="url" value="course" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="404" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="saveCourse" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="course" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="/" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/&#13;&#10;Request Headers: &#13;&#10;    Origin: http://localhost:8080&#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;timestamp&quot;:&quot;2025-05-29T19:54:46.396+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;/ead-course/&quot;}" />
+          <option name="url" value="/" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="saveCourse" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="course" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="course" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/course&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="ConnectException: Connection refused: getsockopt" />
+          <option name="url" value="course" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="201" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;name&quot;: &quot;name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: &quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&#10;  &quot;imageUrl&quot;: &quot;imageUrl_6ubhy&quot;&#10;}" />
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="jsonDocument" value="{&#10;  &quot;name&quot;: &quot;No comment,Value =name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;No comment,Value =description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;No comment,Value =INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;No comment,Value =BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: &quot;No comment,Value =1&quot;,&#10;    &quot;leastSigBits&quot;: &quot;No comment,Value =1&quot;&#10;  },&#10;  &quot;imageUrl&quot;: &quot;No comment,Value =imageUrl_6ubhy&quot;&#10;}" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/courses&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Content-Length: 192&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;imageUrl&quot;:&quot;imageUrl_6ubhy&quot;,&quot;name&quot;:&quot;name_mnm81&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;description&quot;:&quot;description_p793q&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;}&#13;&#10;" />
+          <option name="response" value="{&quot;courseId&quot;:&quot;7e7e6166-ed25-4ee2-b2b5-b5ea616eb88b&quot;,&quot;name&quot;:&quot;name_mnm81&quot;,&quot;description&quot;:&quot;description_p793q&quot;,&quot;createdAt&quot;:&quot;2025-05-29T19:45:47Z&quot;,&quot;updatedAt&quot;:&quot;2025-05-29T19:45:47Z&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;userInstructor&quot;:&quot;7229410c-df9c-474b-9e7b-875b474238b2&quot;,&quot;imageUrl&quot;:&quot;imageUrl_6ubhy&quot;}" />
+          <option name="url" value="courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="502" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;name&quot;: &quot;name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: 1,&#10;    &quot;leastSigBits&quot;: 1&#10;  },&#10;  &quot;imageUrl&quot;: &quot;imageUrl_6ubhy&quot;&#10;}" />
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="jsonDocument" value="{&#10;  &quot;name&quot;: &quot;No comment,Value =name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;No comment,Value =description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;No comment,Value =INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;No comment,Value =BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: &quot;No comment,Value =1&quot;,&#10;    &quot;leastSigBits&quot;: &quot;No comment,Value =1&quot;&#10;  },&#10;  &quot;imageUrl&quot;: &quot;No comment,Value =imageUrl_6ubhy&quot;&#10;}" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/courses&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Content-Length: 188&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;imageUrl&quot;:&quot;imageUrl_6ubhy&quot;,&quot;name&quot;:&quot;name_mnm81&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;description&quot;:&quot;description_p793q&quot;,&quot;userInstructor&quot;:{&quot;leastSigBits&quot;:1,&quot;mostSigBits&quot;:1}}&#13;&#10;" />
+          <option name="response" value="{&quot;errorCode&quot;:400,&quot;errorMessage&quot;:&quot;Invalid enum value&quot;,&quot;errorDetails&quot;:{}}" />
+          <option name="url" value="courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="502" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;name&quot;: &quot;name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: 1,&#10;    &quot;leastSigBits&quot;: 1&#10;  },&#10;  &quot;imageUrl&quot;: &quot;imageUrl_6ubhy&quot;&#10;}" />
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="jsonDocument" value="{&#10;  &quot;name&quot;: &quot;No comment,Value =name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;No comment,Value =description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;No comment,Value =INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;No comment,Value =BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: &quot;No comment,Value =1&quot;,&#10;    &quot;leastSigBits&quot;: &quot;No comment,Value =1&quot;&#10;  },&#10;  &quot;imageUrl&quot;: &quot;No comment,Value =imageUrl_6ubhy&quot;&#10;}" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course/courses&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Content-Length: 188&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;imageUrl&quot;:&quot;imageUrl_6ubhy&quot;,&quot;name&quot;:&quot;name_mnm81&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;description&quot;:&quot;description_p793q&quot;,&quot;userInstructor&quot;:{&quot;leastSigBits&quot;:1,&quot;mostSigBits&quot;:1}}&#13;&#10;" />
+          <option name="response" value="{&quot;errorCode&quot;:400,&quot;errorMessage&quot;:&quot;Invalid enum value&quot;,&quot;errorDetails&quot;:{}}" />
+          <option name="url" value="courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="404" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;name&quot;: &quot;name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: 1,&#10;    &quot;leastSigBits&quot;: 1&#10;  },&#10;  &quot;imageUrl&quot;: &quot;imageUrl_6ubhy&quot;&#10;}" />
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="jsonDocument" value="{&#10;  &quot;name&quot;: &quot;No comment,Value =name_mnm81&quot;,&#10;  &quot;description&quot;: &quot;No comment,Value =description_p793q&quot;,&#10;  &quot;courseStatus&quot;: &quot;No comment,Value =INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;No comment,Value =BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: &quot;No comment,Value =1&quot;,&#10;    &quot;leastSigBits&quot;: &quot;No comment,Value =1&quot;&#10;  },&#10;  &quot;imageUrl&quot;: &quot;No comment,Value =imageUrl_6ubhy&quot;&#10;}" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="/courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course//courses&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Content-Length: 188&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;imageUrl&quot;:&quot;imageUrl_6ubhy&quot;,&quot;name&quot;:&quot;name_mnm81&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;description&quot;:&quot;description_p793q&quot;,&quot;userInstructor&quot;:{&quot;leastSigBits&quot;:1,&quot;mostSigBits&quot;:1}}&#13;&#10;" />
+          <option name="response" value="{&quot;timestamp&quot;:&quot;2025-05-29T19:43:28.537+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;/ead-course//courses&quot;}" />
+          <option name="url" value="/courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="code" value="404" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;name&quot;: &quot;name_9eiia&quot;,&#10;  &quot;description&quot;: &quot;description_mrkwj&quot;,&#10;  &quot;courseStatus&quot;: &quot;INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: 1,&#10;    &quot;leastSigBits&quot;: 1&#10;  },&#10;  &quot;imageUrl&quot;: &quot;imageUrl_a6ot0&quot;&#10;}" />
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="jsonDocument" value="{&#10;  &quot;name&quot;: &quot;No comment,Value =name_9eiia&quot;,&#10;  &quot;description&quot;: &quot;No comment,Value =description_mrkwj&quot;,&#10;  &quot;courseStatus&quot;: &quot;No comment,Value =INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;No comment,Value =BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: &quot;No comment,Value =1&quot;,&#10;    &quot;leastSigBits&quot;: &quot;No comment,Value =1&quot;&#10;  },&#10;  &quot;imageUrl&quot;: &quot;No comment,Value =imageUrl_a6ot0&quot;&#10;}" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="/courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course//courses&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Content-Length: 188&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;imageUrl&quot;:&quot;imageUrl_a6ot0&quot;,&quot;name&quot;:&quot;name_9eiia&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;description&quot;:&quot;description_mrkwj&quot;,&quot;userInstructor&quot;:{&quot;leastSigBits&quot;:1,&quot;mostSigBits&quot;:1}}&#13;&#10;" />
+          <option name="response" value="{&quot;timestamp&quot;:&quot;2025-05-29T19:42:26.480+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;/ead-course//courses&quot;}" />
+          <option name="url" value="/courses" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+          <option name="enableEnv" value="local" />
+          <option name="enableProject" value="course" />
+          <option name="method" value="saveCourse" />
+          <option name="methodType" value="POST" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="bodyKeyValueListJson" value="{&#10;  &quot;name&quot;: &quot;name_9eiia&quot;,&#10;  &quot;description&quot;: &quot;description_mrkwj&quot;,&#10;  &quot;courseStatus&quot;: &quot;INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: 1,&#10;    &quot;leastSigBits&quot;: 1&#10;  },&#10;  &quot;imageUrl&quot;: &quot;imageUrl_a6ot0&quot;&#10;}" />
+              <option name="className" value="com.brunoandreotti.course.controllers.CourseController" />
+              <option name="jsonDocument" value="{&#10;  &quot;name&quot;: &quot;No comment,Value =name_9eiia&quot;,&#10;  &quot;description&quot;: &quot;No comment,Value =description_mrkwj&quot;,&#10;  &quot;courseStatus&quot;: &quot;No comment,Value =INPROGRESS&quot;,&#10;  &quot;courseLevel&quot;: &quot;No comment,Value =BEGINNER&quot;,&#10;  &quot;userInstructor&quot;: {&#10;    &quot;mostSigBits&quot;: &quot;No comment,Value =1&quot;,&#10;    &quot;leastSigBits&quot;: &quot;No comment,Value =1&quot;&#10;  },&#10;  &quot;imageUrl&quot;: &quot;No comment,Value =imageUrl_a6ot0&quot;&#10;}" />
+              <option name="method" value="saveCourse" />
+              <option name="methodDescription" value="saveCourse" />
+              <option name="methodType" value="POST" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/courses" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="returnDocument" value="{&quot;status&quot;:{},&quot;headers&quot;:{},&quot;body&quot;:{}}" />
+              <option name="url" value="/courses" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[]" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://localhost:8082/ead-course//courses&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Fast Request/2025.1.4&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Content-Length: 188&#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&quot;courseLevel&quot;:&quot;BEGINNER&quot;,&quot;imageUrl&quot;:&quot;imageUrl_a6ot0&quot;,&quot;name&quot;:&quot;name_9eiia&quot;,&quot;courseStatus&quot;:&quot;INPROGRESS&quot;,&quot;description&quot;:&quot;description_mrkwj&quot;,&quot;userInstructor&quot;:{&quot;leastSigBits&quot;:1,&quot;mostSigBits&quot;:1}}&#13;&#10;" />
+          <option name="response" value="ConnectException: Connection refused: getsockopt" />
+          <option name="url" value="/courses" />
+        </ResponseHistory>
+      </list>
+    </option>
+  </component>
+</project>
