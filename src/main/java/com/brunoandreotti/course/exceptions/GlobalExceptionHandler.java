@@ -51,7 +51,7 @@ public class GlobalExceptionHandler {
         }
 
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), "Invalid enum value", errors);
-        log.error("HttpMessageNotReadableExceptiong: {}", ex.getMessage());
+        log.error("HttpMessageNotReadableException: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(errorResponse);
     }
 }
