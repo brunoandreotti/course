@@ -16,3 +16,7 @@ spring:
       hibernate:
         show_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+integration:
+  url:
+    user: "http://localhost:8087/ead-authuser"
