@@ -1,9 +1,9 @@
 package com.brunoandreotti.course.models;
 
 import com.brunoandreotti.course.dtos.CourseRecordDTO;
+import com.brunoandreotti.course.dtos.SubscriptionRecordDTO;
 import com.brunoandreotti.course.enums.CourseLevel;
 import com.brunoandreotti.course.enums.CourseStatus;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -69,10 +69,19 @@ public class CourseModel implements Serializable {
     private Set<CourseUserModel> courseUsers;
 
 
-    public CourseModel fromDTO(CourseRecordDTO courseRecordDTO) {
+    public CourseModel fromCourseRecordDTO(CourseRecordDTO courseRecordDTO) {
         var courseModel = new CourseModel();
         BeanUtils.copyProperties(courseRecordDTO, courseModel);
         return courseModel;
     }
+
+    public CourseUserModel toCourseUserModel (UUID userId) {
+        CourseUserModel courseUser = new CourseUserModel();
+        courseUser.setUserId(userId);
+        courseUser.setCourse(this);
+
+        return courseUser;
+    }
+
 
 }

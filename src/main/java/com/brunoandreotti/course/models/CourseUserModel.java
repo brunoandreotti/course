@@ -1,5 +1,6 @@
 package com.brunoandreotti.course.models;
 
+import com.brunoandreotti.course.dtos.SubscriptionRecordDTO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -27,4 +28,6 @@ public class CourseUserModel implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "course_id")
     private  CourseModel course;
+
+
 }

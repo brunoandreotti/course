@@ -63,7 +63,7 @@ public class CourseServiceImpl implements CourseService {
             throw new NotFoundException("Course with this name already exists");
         }
 
-        var courseModel = new CourseModel().fromDTO(courseRecordDTO);
+        var courseModel = new CourseModel().fromCourseRecordDTO(courseRecordDTO);
         courseModel.setCreatedAt(LocalDateTime.now(ZoneId.of("UTC")));
         courseModel.setUpdatedAt(LocalDateTime.now(ZoneId.of("UTC")));
         return courseRepository.save(courseModel);

@@ -54,4 +54,11 @@ public class GlobalExceptionHandler {
         log.error("HttpMessageNotReadableException: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(errorResponse);
     }
+
+    @ExceptionHandler(SubscriptionAlreadyExistsException.class)
+    private ResponseEntity<ErrorResponse> handleSubscriptionAlreadyExistsException(SubscriptionAlreadyExistsException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.CONFLICT.value(), ex.getMessage(), null);
+        log.error("SubscriptionAlreadyExistsException message: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
+    }
 }
