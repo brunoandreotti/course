@@ -3,15 +3,23 @@ package com.brunoandreotti.course.clients;
 
 import com.brunoandreotti.course.dtos.ResponsePageDTO;
 import com.brunoandreotti.course.dtos.UserRecordDTO;
+import com.brunoandreotti.course.exceptions.ClientErrorException;
+import com.brunoandreotti.course.exceptions.ErrorResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.client.reactive.ClientHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 @Component
@@ -19,7 +27,7 @@ import java.util.UUID;
 public class UserClient {
 
     @Value("${integration.url.user}")
-    private String courseBaseUrl;
+    private String authUserBaseUrl;
 
     private final RestClient restClient;
 
@@ -29,7 +37,7 @@ public class UserClient {
 
     public Page<UserRecordDTO> getAllUsersByCourse(UUID userId, Pageable pageable) {
 
-        String url = courseBaseUrl + String.format("/users?courseId=%s&page=%s&size=%s&sort=%s",
+        String url = authUserBaseUrl + String.format("/users?courseId=%s&page=%s&size=%s&sort=%s",
 
                 userId,
                 pageable.getPageNumber(),
@@ -45,8 +53,27 @@ public class UserClient {
                     .retrieve()
                     .body(new ParameterizedTypeReference<ResponsePageDTO<UserRecordDTO>>() {});
         } catch (RestClientException ex) {
-           log.error("Error Request RestClient with cause: {}", ex.getMessage());
-           throw new RuntimeException("Error Request RestClient", ex);
+           log.error("Error Request RestClient getAllUsersByCourse with cause: {}", ex.getMessage());
+           throw new ClientErrorException("Error Request RestClient", ex);
         }
     }
+
+    public UserRecordDTO getOneUserById(UUID userId) {
+        String url = authUserBaseUrl + String.format("/users/%s", userId);
+
+        return restClient.get()
+                .uri(url)
+                .retrieve()
+                .onStatus(status -> status.value() != 200,
+                        (request, response) -> {
+
+                            log.error("Error Request RestClient getOneUserById with cause: {}", response.getBody().toString());
+                            throw new ClientErrorException("Error Request RestClient getOneUserById", response.getStatusCode().value());
+                        })
+                .toEntity(UserRecordDTO.class).getBody();
+    }
+
+
+
+
 }
