@@ -2,6 +2,7 @@ package com.brunoandreotti.course.clients;
 
 
 import com.brunoandreotti.course.dtos.ResponsePageDTO;
+import com.brunoandreotti.course.dtos.UserCourseRequestDTO;
 import com.brunoandreotti.course.dtos.UserRecordDTO;
 import com.brunoandreotti.course.exceptions.ClientErrorException;
 import com.brunoandreotti.course.exceptions.ErrorResponse;
@@ -12,6 +13,8 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ClientHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
@@ -64,13 +67,30 @@ public class UserClient {
         return restClient.get()
                 .uri(url)
                 .retrieve()
-                .onStatus(status -> status.value() != 200,
+                .onStatus(status -> !status.is2xxSuccessful(),
                         (request, response) -> {
-
                             log.error("Error Request RestClient getOneUserById with cause: {}", response.getBody().toString());
                             throw new ClientErrorException("Error Request RestClient getOneUserById", response.getStatusCode().value());
                         })
                 .toEntity(UserRecordDTO.class).getBody();
+    }
+
+    public void postSubscriptionUserInCourse(UUID userId, UUID courseId) {
+        String url = authUserBaseUrl + String.format("/users/%s/courses/subscription", userId);
+
+        UserCourseRequestDTO userCourseRequest = new UserCourseRequestDTO(courseId);
+
+        restClient.post()
+                .uri(url)
+                .body(userCourseRequest)
+                .contentType(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .onStatus(status -> !status.is2xxSuccessful(),
+                        (request, response) -> {
+                            log.error("Error Request RestClient postSubscriptionUserInCourse with cause: {}", response.getBody().toString());
+                            throw new ClientErrorException("Error Request RestClient getOneUserById", response.getStatusCode().value());
+                        })
+                .toBodilessEntity();
     }
 
 

@@ -12,6 +12,7 @@ import com.brunoandreotti.course.repositories.CourseUserRepository;
 import com.brunoandreotti.course.services.CourseService;
 import com.brunoandreotti.course.services.CourseUserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
@@ -28,6 +29,7 @@ public class CourseUserServiceImpl implements CourseUserService {
         this.userClient = userClient;
     }
 
+    @Transactional
     @Override
     public CourseUserModel saveSubscriptionUserInCourse(UUID courseId,
                                                         SubscriptionRecordDTO subscriptionRecordDTO) {
@@ -48,17 +50,15 @@ public class CourseUserServiceImpl implements CourseUserService {
         return saveAndSendSubscriptionUserInCourse(course.toCourseUserModel(userId));
     }
 
-    @Override
-    public Boolean checkIfSubscriptionExists (CourseModel course, UUID userId) {
+   private Boolean checkIfSubscriptionExists (CourseModel course, UUID userId) {
         return courseUserRepository.existsByCourseAndUserId(course, userId);
 
     }
 
-    @Override
-    public CourseUserModel saveAndSendSubscriptionUserInCourse(CourseUserModel courseUserModel) {
+    private CourseUserModel saveAndSendSubscriptionUserInCourse(CourseUserModel courseUserModel) {
         CourseUserModel savedCourseUserModel = courseUserRepository.save(courseUserModel);
 
-        //TODO: send user and course to authUser microservice
+        userClient.postSubscriptionUserInCourse(courseUserModel.getUserId(), courseUserModel.getCourse().getCourseId());
 
         return savedCourseUserModel;
     }
