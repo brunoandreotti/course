@@ -76,4 +76,11 @@ public class GlobalExceptionHandler {
         log.error("ClientErrorException message: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.valueOf(httpStatus)).body(errorResponse);
     }
+
+    @ExceptionHandler(UserStatusException.class)
+    private ResponseEntity<ErrorResponse> handleUserStatusException(UserStatusException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), ex.getMessage(), null);
+        log.error("UserStatusException message: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
 }

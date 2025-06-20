@@ -1,7 +1,11 @@
 package com.brunoandreotti.course.services.impl;
 
+import com.brunoandreotti.course.clients.UserClient;
 import com.brunoandreotti.course.dtos.CourseRecordDTO;
+import com.brunoandreotti.course.dtos.UserRecordDTO;
+import com.brunoandreotti.course.enums.UserType;
 import com.brunoandreotti.course.exceptions.NotFoundException;
+import com.brunoandreotti.course.exceptions.UserStatusException;
 import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.LessonModel;
 import com.brunoandreotti.course.models.ModuleModel;
@@ -25,14 +29,16 @@ import java.util.UUID;
 @Service
 public class CourseServiceImpl implements CourseService {
 
-    final CourseRepository courseRepository;
-    final ModuleRepository moduleRepository;
-    final LessonRepository lessonRepository;
+    private final CourseRepository courseRepository;
+    private final ModuleRepository moduleRepository;
+    private final LessonRepository lessonRepository;
+    private final UserClient userClient;
 
-    public CourseServiceImpl(CourseRepository courseRepository, ModuleRepository moduleRepository, LessonRepository lessonRepository) {
+    public CourseServiceImpl(CourseRepository courseRepository, ModuleRepository moduleRepository, LessonRepository lessonRepository, UserClient userClient) {
         this.courseRepository = courseRepository;
         this.moduleRepository = moduleRepository;
         this.lessonRepository = lessonRepository;
+        this.userClient = userClient;
     }
 
     @Transactional
@@ -61,6 +67,14 @@ public class CourseServiceImpl implements CourseService {
 
         if (courseRepository.existsByName(courseRecordDTO.name())) {
             throw new NotFoundException("Course with this name already exists");
+        }
+
+        UserRecordDTO userInstructor = userClient.getOneUserById(courseRecordDTO.userInstructor());
+        UserType type = userInstructor.userType();
+
+
+        if (type != UserType.INSTRUCTOR && type != UserType.ADMIN) {
+            throw new UserStatusException("User must be instructor or admin");
         }
 
         var courseModel = new CourseModel().fromCourseRecordDTO(courseRecordDTO);
