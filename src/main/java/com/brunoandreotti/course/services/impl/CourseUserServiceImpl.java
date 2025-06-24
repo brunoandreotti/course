@@ -6,8 +6,10 @@ import com.brunoandreotti.course.dtos.UserRecordDTO;
 import com.brunoandreotti.course.enums.UserStatus;
 import com.brunoandreotti.course.exceptions.BlockedStatusException;
 import com.brunoandreotti.course.exceptions.AlreadyExistsException;
+import com.brunoandreotti.course.exceptions.NotFoundException;
 import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.CourseUserModel;
+import com.brunoandreotti.course.repositories.CourseRepository;
 import com.brunoandreotti.course.repositories.CourseUserRepository;
 import com.brunoandreotti.course.services.CourseService;
 import com.brunoandreotti.course.services.CourseUserService;
@@ -25,10 +27,12 @@ public class CourseUserServiceImpl implements CourseUserService {
     private final CourseUserRepository courseUserRepository;
     private final UserClient userClient;
 
+
     public CourseUserServiceImpl(CourseService courseService, CourseUserRepository courseUserRepository, UserClient userClient) {
         this.courseService = courseService;
         this.courseUserRepository = courseUserRepository;
         this.userClient = userClient;
+
     }
 
     @Transactional
@@ -57,6 +61,18 @@ public class CourseUserServiceImpl implements CourseUserService {
         CourseModel course = courseService.findById(courseId);
 
         return userClient.getAllUsersByCourse(course.getCourseId(), pageable);
+    }
+
+    @Transactional
+    @Override
+    public void deleteCourseUserByUser(UUID userId) {
+            Boolean existsByUserId = courseUserRepository.existsByUserId(userId);
+
+            if (!existsByUserId) {
+                throw new NotFoundException("Result with userId " + userId + " not found");
+            }
+
+        courseUserRepository.deleteAllByUserId(userId);
     }
 
     private Boolean checkIfSubscriptionExists (CourseModel course, UUID userId) {

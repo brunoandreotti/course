@@ -15,4 +15,5 @@ public interface CourseUserService {
 
     Page<UserRecordDTO> getAllUsersByCourse(UUID courseId, Pageable pageable);
 
+    void deleteCourseUserByUser(UUID userId);
 }

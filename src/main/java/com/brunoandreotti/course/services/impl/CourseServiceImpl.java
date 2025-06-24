@@ -68,7 +68,7 @@ public class CourseServiceImpl implements CourseService {
 
         if (!courseUserList.isEmpty()) {
             courseUserRepository.deleteAll(courseUserList);
-            userClient.deleteCourseUserInAuthUser(courseId);
+            userClient.deleteUserCourseInAuthUser(courseId);
         }
 
         courseRepository.delete(courseModel);

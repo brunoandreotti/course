@@ -43,4 +43,12 @@ public class CourseUserController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(courseUserService.saveSubscriptionUserInCourse(userId, subscriptionRecordDTO));
     }
+
+    @DeleteMapping("/courses/users/{userId}")
+    public ResponseEntity<Object> deleteCourseUserByUser(
+            @PathVariable(value = "userId") UUID userId
+    ) {
+        courseUserService.deleteCourseUserByUser(userId);
+        return ResponseEntity.status(HttpStatus.OK).body("CourseUser deleted successfully");
+    }
 }

@@ -5,24 +5,16 @@ import com.brunoandreotti.course.dtos.ResponsePageDTO;
 import com.brunoandreotti.course.dtos.UserCourseRequestDTO;
 import com.brunoandreotti.course.dtos.UserRecordDTO;
 import com.brunoandreotti.course.exceptions.ClientErrorException;
-import com.brunoandreotti.course.exceptions.ErrorResponse;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
-import org.springframework.http.client.reactive.ClientHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 @Component
@@ -96,7 +88,7 @@ public class UserClient {
                 .toBodilessEntity();
     }
 
-    public void deleteCourseUserInAuthUser(UUID courseId) {
+    public void deleteUserCourseInAuthUser(UUID courseId) {
         String url = authUserBaseUrl + String.format("/users/courses/%s", courseId);
 
         log.info("DELETE - deleteCourseUserInAuthUser");
