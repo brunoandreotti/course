@@ -51,19 +51,21 @@ public class UserClient {
                         replaceAll(" ", ""));
 
         try {
+            log.info("GET - getAllUsersByCourse");
             return restClient.get()
                     .uri(url)
                     .retrieve()
                     .body(new ParameterizedTypeReference<ResponsePageDTO<UserRecordDTO>>() {});
         } catch (RestClientException ex) {
            log.error("Error Request RestClient getAllUsersByCourse with cause: {}", ex.getMessage());
-           throw new ClientErrorException("Error Request RestClient", ex);
+           throw new ClientErrorException("Error Request RestClient getAllUsersByCourse", ex);
         }
     }
 
     public UserRecordDTO getOneUserById(UUID userId) {
         String url = authUserBaseUrl + String.format("/users/%s", userId);
 
+        log.info("GET - getOneUserById");
         return restClient.get()
                 .uri(url)
                 .retrieve()
@@ -80,6 +82,7 @@ public class UserClient {
 
         UserCourseRequestDTO userCourseRequest = new UserCourseRequestDTO(courseId);
 
+        log.info("POST - postSubscriptionUserInCourse");
         restClient.post()
                 .uri(url)
                 .body(userCourseRequest)
@@ -88,12 +91,25 @@ public class UserClient {
                 .onStatus(status -> !status.is2xxSuccessful(),
                         (request, response) -> {
                             log.error("Error Request RestClient postSubscriptionUserInCourse with cause: {}", response.getBody().toString());
-                            throw new ClientErrorException("Error Request RestClient getOneUserById", response.getStatusCode().value());
+                            throw new ClientErrorException("Error Request RestClient postSubscriptionUserInCourse", response.getStatusCode().value());
                         })
                 .toBodilessEntity();
     }
 
+    public void deleteCourseUserInAuthUser(UUID courseId) {
+        String url = authUserBaseUrl + String.format("/users/courses/%s", courseId);
 
+        log.info("DELETE - deleteCourseUserInAuthUser");
+        restClient.delete()
+                .uri(url)
+                .retrieve()
+                .onStatus(status -> !status.is2xxSuccessful(),
+                        (request, response) -> {
+                            log.error("Error Request deleteCourseUserInAuthUser with cause: {}", response.getBody().toString());
+                            throw new ClientErrorException("Error Request RestClient deleteCourseUserInAuthUser", response.getStatusCode().value());
+                        })
+                .toBodilessEntity();
+    }
 
 
 }

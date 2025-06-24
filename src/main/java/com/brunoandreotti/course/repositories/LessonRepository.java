@@ -18,4 +18,6 @@ public interface LessonRepository extends JpaRepository<LessonModel, UUID>, JpaS
 
     @Query(value = "select * from tb_lessons where module_id = :moduleId and lesson_Id = :lessonId", nativeQuery = true)
     Optional<LessonModel> findLessonIntoModule(UUID moduleId, UUID lessonId);
+
+    Boolean existsByTitle(String title);
 }

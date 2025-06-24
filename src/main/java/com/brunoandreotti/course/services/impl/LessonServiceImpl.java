@@ -2,6 +2,7 @@ package com.brunoandreotti.course.services.impl;
 
 
 import com.brunoandreotti.course.dtos.LessonRecordDTO;
+import com.brunoandreotti.course.exceptions.AlreadyExistsException;
 import com.brunoandreotti.course.exceptions.NotFoundException;
 import com.brunoandreotti.course.models.LessonModel;
 import com.brunoandreotti.course.models.ModuleModel;
@@ -36,6 +37,11 @@ public class LessonServiceImpl implements LessonService {
     @Override
     public LessonModel save(LessonRecordDTO lessonRecordDTO, UUID moduleId) {
         ModuleModel module = moduleService.findById(moduleId);
+
+        if (lessonRepository.existsByTitle(lessonRecordDTO.title())) {
+            throw new AlreadyExistsException("Lesson with this title already exists");
+        }
+
         LessonModel lesson = new LessonModel();
         BeanUtils.copyProperties(lessonRecordDTO, lesson);
         lesson.setModule(module);

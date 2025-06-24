@@ -5,12 +5,14 @@ import com.brunoandreotti.course.dtos.SubscriptionRecordDTO;
 import com.brunoandreotti.course.dtos.UserRecordDTO;
 import com.brunoandreotti.course.enums.UserStatus;
 import com.brunoandreotti.course.exceptions.BlockedStatusException;
-import com.brunoandreotti.course.exceptions.SubscriptionAlreadyExistsException;
+import com.brunoandreotti.course.exceptions.AlreadyExistsException;
 import com.brunoandreotti.course.models.CourseModel;
 import com.brunoandreotti.course.models.CourseUserModel;
 import com.brunoandreotti.course.repositories.CourseUserRepository;
 import com.brunoandreotti.course.services.CourseService;
 import com.brunoandreotti.course.services.CourseUserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,7 +39,7 @@ public class CourseUserServiceImpl implements CourseUserService {
         UUID userId = subscriptionRecordDTO.userId();
 
         if (checkIfSubscriptionExists(course, userId)) {
-           throw new SubscriptionAlreadyExistsException("User: " + userId + " already subscribed in course " + course.getCourseId());
+           throw new AlreadyExistsException("User: " + userId + " already subscribed in course " + course.getCourseId());
         }
 
         UserRecordDTO user = userClient.getOneUserById(userId);
@@ -50,7 +52,14 @@ public class CourseUserServiceImpl implements CourseUserService {
         return saveAndSendSubscriptionUserInCourse(course.toCourseUserModel(userId));
     }
 
-   private Boolean checkIfSubscriptionExists (CourseModel course, UUID userId) {
+    @Override
+    public Page<UserRecordDTO> getAllUsersByCourse(UUID courseId, Pageable pageable) {
+        CourseModel course = courseService.findById(courseId);
+
+        return userClient.getAllUsersByCourse(course.getCourseId(), pageable);
+    }
+
+    private Boolean checkIfSubscriptionExists (CourseModel course, UUID userId) {
         return courseUserRepository.existsByCourseAndUserId(course, userId);
 
     }

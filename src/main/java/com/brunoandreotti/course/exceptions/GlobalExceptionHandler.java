@@ -55,8 +55,8 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(errorResponse);
     }
 
-    @ExceptionHandler(SubscriptionAlreadyExistsException.class)
-    private ResponseEntity<ErrorResponse> handleSubscriptionAlreadyExistsException(SubscriptionAlreadyExistsException ex) {
+    @ExceptionHandler(AlreadyExistsException.class)
+    private ResponseEntity<ErrorResponse> handleSubscriptionAlreadyExistsException(AlreadyExistsException ex) {
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.CONFLICT.value(), ex.getMessage(), null);
         log.error("SubscriptionAlreadyExistsException message: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);

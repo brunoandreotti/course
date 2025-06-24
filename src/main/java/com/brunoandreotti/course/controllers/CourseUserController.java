@@ -30,10 +30,10 @@ public class CourseUserController {
 
     @GetMapping("/courses/{courseId}/users")
     public ResponseEntity<Page<UserRecordDTO>> getAllUsersByCourse(
-            @PathVariable(value = "courseId") UUID userId,
+            @PathVariable(value = "courseId") UUID courseId,
             @PageableDefault(sort = "userId", direction = Sort.Direction.ASC) Pageable pageable) {
 
-        return ResponseEntity.status(HttpStatus.OK).body(userClient.getAllUsersByCourse(userId, pageable));
+        return ResponseEntity.status(HttpStatus.OK).body(courseUserService.getAllUsersByCourse(courseId, pageable));
     }
 
     @PostMapping("/courses/{courseId}/users/subscription")
